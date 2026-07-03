@@ -2,7 +2,7 @@
 
 A machine learning pipeline that classifies news articles as **real or fake** using TF-IDF text features and four classification algorithms — built as part of the IICT AI/ML Summer Internship Program (2026).
 
-## 📊 Results
+## Results
 
 Trained and evaluated on 44,889 real news articles ([Kaggle Fake and Real News Dataset](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset)):
 
@@ -15,13 +15,13 @@ Trained and evaluated on 44,889 real news articles ([Kaggle Fake and Real News D
 
 ![Model Comparison](outputs/model_comparison.png)
 
-## 🧠 Overview
+## Overview
 
 - **Problem**: Binary text classification — predict whether a news article is real or fake from its title and body text.
 - **Approach**: Manual text cleaning + tokenization → TF-IDF vectorization (unigrams + bigrams, 5000 features) → 4 classifiers spanning parametric, non-parametric, ensemble, and deep learning paradigms.
 - **Key design decision**: The dataset's `subject` metadata column was deliberately excluded from model input — it near-perfectly separates real/fake by tag alone, which would let the model "cheat" using a dataset artifact instead of learning genuine linguistic patterns of misinformation.
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── week1_load_clean.py       # Data loading, merging, manual cleaning & tokenization
@@ -32,7 +32,7 @@ Trained and evaluated on 44,889 real news articles ([Kaggle Fake and Real News D
 └── README.md
 ```
 
-## 🔬 Methodology
+## Methodology
 
 1. **Preprocessing**: Lowercasing, URL/punctuation/digit removal, manual tokenization, custom stopword removal
 2. **Feature Extraction**: TF-IDF (unigrams + bigrams, max 5000 features, min_df=3)
@@ -43,20 +43,20 @@ Trained and evaluated on 44,889 real news articles ([Kaggle Fake and Real News D
    - Multi-Layer Perceptron (neural network, 100 hidden units, early stopping)
 4. **Evaluation**: Accuracy, Precision, Recall, F1-Score, ROC-AUC, Confusion Matrix on an 80/20 stratified train-test split
 
-## 📈 Exploratory Insights
+## Exploratory Insights
 
 Fake news articles skew toward personality-driven vocabulary (*trump, obama, clinton, video*), while real news articles emphasize institutional terms (*state, government, republican, united*).
 
 ![Top Words by Class](outputs/eda_top_words.png)
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - Python 3
 - scikit-learn
 - pandas / numpy
 - matplotlib
 
-## ▶️ How to Run
+## How to Run
 
 ```bash
 pip install pandas numpy scikit-learn matplotlib
@@ -69,7 +69,7 @@ python week4_evaluate.py        # generates evaluation charts
 
 > Note: `Fake.csv` and `True.csv` from the [Kaggle dataset](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset) must be placed in the same directory before running `week1_load_clean.py`.
 
-## 📄 Full Report
+## Full Report
 
 A complete IEEE-format project report (introduction, methodology, results, discussion, conclusion, references) is available on request / linked in the project documentation.
 
